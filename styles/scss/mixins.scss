@@ -1,0 +1,78 @@
+@font-face {
+	font-family: "introBlack_regular";
+	src: url("../fonts/intro_black.woff2") format("woff2"),
+		url("../fonts/intro_black.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "introBlack_italic";
+	src: url("../fonts/intro_black_italic.woff2") format("woff2"),
+		url("../fonts/intro_black_italic.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "intro_regular";
+	src: url("../fonts/intro_font.woff2") format("woff2"),
+		url("../fonts/intro_font.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "proximaNova_bold";
+	src: url("../fonts/proximanova-bold.woff2") format("woff2"),
+		url("../fonts/proximanova-bold.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "proximaNova_regular";
+	src: url("../fonts/proximanova-regular.woff2") format("woff2"),
+		url("../fonts/proximanova-regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin introBlackRegular {
+	font-family: "introBlack_regular";
+}
+@mixin introBlackItalic {
+	font-family: "introBlack_italic";
+}
+@mixin introRegular {
+	font-family: "intro_regular";
+}
+@mixin PNBold {
+	font-family: "proximaNova_bold";
+}
+@mixin PNRegular {
+	font-family: "proximaNova_regular";
+}
+
+@function fontSize($f-min, $f-max) {
+	$k: ($f-max - $f-min)/ (1920 - 320);
+	$b: $f-min - $k * 320;
+
+	$b: $b * 1px;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}
+@mixin innerWidth {
+	width: 100%;
+	max-width: 1171px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0 auto;
+}
+$colorBlack: #040404;
+$colorLightGrey: #cccccc;
+
+@mixin gradient($color1, $color2, $direction) {
+	background: linear-gradient(to $direction, $color1, $color2);
+}
+$gradient: linear-gradient(to top, #ff4f58, #fd7048);
