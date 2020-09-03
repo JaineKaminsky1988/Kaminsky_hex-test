@@ -52,7 +52,6 @@ function showSlides(s, t) {
     slidesText[slideTextIndex - 1].style.display = "block"
 
     dots[slideIndex - 1].className += " active"
-    dots[slideTextIndex - 1].className += " active"
 }
 
 if (window.innerWidth <= 768) {
